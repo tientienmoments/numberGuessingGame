@@ -46,7 +46,7 @@ function choosingNumber() {
 
         if (guessNumber > randomNumber) {
 
-            areaResult.innerHTML = `too High`
+            areaResult.innerHTML = `Hint: Your Number is too High`
 
             document.getElementById("guesses-remaining").innerHTML = `Remain Trying ${remainNumber}`
             if (guessNumber === history[history.length - 1]) {
@@ -56,7 +56,7 @@ function choosingNumber() {
 
         } else if (guessNumber < randomNumber) {
 
-            areaResult.innerHTML = `too Low`
+            areaResult.innerHTML = `Hint: Your Number is too Low`
             document.getElementById("guesses-remaining").innerHTML = `Remain Trying ${remainNumber}`
             if (guessNumber === history[history.length - 1]) {
                 alert("same number")
