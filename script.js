@@ -50,7 +50,7 @@ function choosingNumber() {
 
             document.getElementById("guesses-remaining").innerHTML = `Remain Trying ${remainNumber}`
             if (guessNumber === history[history.length - 1]) {
-                alert("same number")
+                alert("Same number. Try other number")
             }
 
 
@@ -59,7 +59,7 @@ function choosingNumber() {
             areaResult.innerHTML = `Hint: Your Number is too Low`
             document.getElementById("guesses-remaining").innerHTML = `Remain Trying ${remainNumber}`
             if (guessNumber === history[history.length - 1]) {
-                alert("same number")
+                alert("Same number. Try other number")
             }
 
         } else {
