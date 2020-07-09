@@ -94,8 +94,13 @@ function resetGame() {
         "history": history,
         "time": time
     })
-    anounceText=JSON.stringify(round)
-    document.getElementById("round").innerHTML = `Last game:${anounceText}`
+    let roundHTML= ``
+    
+    for(let i = 0; i<round.length; i++){
+        roundHTML += `<p>HISTORY: ${round[i].history} - TIME:${round[i].time} </p>`
+
+    }
+    document.getElementById("round").innerHTML = `${roundHTML}`
     timecounting()
     document.getElementById("user-guess").value = ""
     // areaResultReset=0
