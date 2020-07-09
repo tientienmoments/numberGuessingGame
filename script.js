@@ -40,36 +40,45 @@ function choosingNumber() {
 
     console.log('User guessed:', guessNumber)
 
-    remainNumber -= 1
+    remainNumber -=1
 
     if (remainNumber > 0) {
 
-        if (guessNumber > randomNumber) {
+        if (guessNumber>0 && guessNumber<100 && guessNumber>randomNumber)  {
 
             areaResult.innerHTML = `Hint: Your Number is too High`
 
             document.getElementById("guesses-remaining").innerHTML = `Remain Trying ${remainNumber}`
-            if (guessNumber === history[history.length - 1]) {
+           for(let i=0;i<history.length; i++)
+            if (guessNumber === history[i]) {
                 alert("Same number. Try other number")
+                return
             }
 
 
-        } else if (guessNumber < randomNumber) {
+        } else if (guessNumber>0 && guessNumber<100 && guessNumber < randomNumber) {
 
             areaResult.innerHTML = `Hint: Your Number is too Low`
             document.getElementById("guesses-remaining").innerHTML = `Remain Trying ${remainNumber}`
-            if (guessNumber === history[history.length - 1]) {
+            for(let i=0;i<history.length; i++)
+            if (guessNumber === history[i]) {
                 alert("Same number. Try other number")
+                return
             }
 
-        } else {
+        } else if (guessNumber>0 && guessNumber<100 && guessNumber===randomNumber){
 
             areaResult.innerHTML = `congrat!!!success`
+            
+        }else{
+            alert ("wrong type of number, 0<number<100")
             return
         }
         //add guessing number to history
         history.push(guessNumber)
         document.getElementById("historyArea").innerHTML = `You have tried:${history}`
+
+
     } else {
         console.log("you run out of guess")
         document.getElementById("run-out").innerHTML = `Game Over`
